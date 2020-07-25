@@ -347,7 +347,19 @@
 </section>
 
 
+<!-- footer -->
+<footer id="main-footer" class="py-5 bg-primary text-white">
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-lg-12 ml-auto">
+				<p class="lead">
+					Copyright &copy; <span id="year"></span>
+				</p>
+			</div>
+		</div>
+	</div>
 
+</footer>
 
 
 
@@ -362,6 +374,12 @@
     crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
     crossorigin="anonymous"></script>
+
+
+<script>
+	$('#year').text(new Date().getFullYear());
+</script>
+
 </body>
 </html>
 
