@@ -11,10 +11,9 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-
+<body id="home" data-spy="scroll" data-target='#main-nav'>
 	<!-- navbar starts -->
-<div class="navbar navbar-expand-md navbar-light fixed-top py-4">
+<div class="navbar navbar-expand-md navbar-light fixed-top py-4" id="main-nav">
 		<div class="container">
 			<a href="#home" class="navbar-brand">
 			<img src="img/mlogo.png" width="50" height="50" alt="">
@@ -26,16 +25,16 @@
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
-						<a href="home" class="nav-link">Home</a>
+						<a href="#home" class="nav-link">Home</a>
 					</li>
 					<li class="nav-item">
-						<a href="about" class="nav-link">About</a>
+						<a href="#about" class="nav-link">About</a>
 					</li>
 					<li class="nav-item">
-						<a href="authers" class="nav-link">Meet The Author</a>
+						<a href="#authers" class="nav-link">Meet The Author</a>
 					</li>
 					<li class="nav-item">
-						<a href="contacts" class="nav-link">Contact</a>
+						<a href="#contact" class="nav-link">Contact</a>
 					</li>
 				</ul>
 			</div>
@@ -126,7 +125,7 @@
 </section>
 
 <!-- why this book -->
-<section id="book" class="py-5 text-center">
+<section id="about" class="py-5 text-center">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 pt-4">
@@ -378,6 +377,22 @@
 
 <script>
 	$('#year').text(new Date().getFullYear());
+
+// initialize scrollspy
+$('body').scrollspy({target:'#main-nav'});
+
+// smooth scrolling
+$('#main-nav a').on('click',function(event){
+	if (this.hash!="") {
+		event.preventDefault();
+		const hash=this.hash;
+		$('html,body').animate({
+			scrollTop:$(hash).offset().top
+		},800,function(){
+			window.location.hash=hash;
+		});
+	}
+});
 </script>
 
 </body>
