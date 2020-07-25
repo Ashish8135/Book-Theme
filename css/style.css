@@ -36,4 +36,12 @@ body {
   margin: auto;
   border-bottom: 1px #ff7675; }
 
+#auther img {
+  margin-top: -50px; }
+#auther .card:hover {
+  background: #3292a6;
+  color: white; }
+#auther .fab {
+  color: white; }
+
 /*# sourceMappingURL=style.css.map */
